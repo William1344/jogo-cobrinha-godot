@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ckhlhhxk6c70p"]
+
+[ext_resource type="Script" uid="uid://wsp3m4orsk6y" path="res://scripts/game.gd" id="1_ibkli"]
+
+[node name="Game" type="Node2D" unique_id=1502038323]
+position = Vector2(-1, 115)
+script = ExtResource("1_ibkli")
+
+[node name="Snake" type="Node2D" parent="." unique_id=1488964169]
+position = Vector2(43, 69)
+
+[node name="Food" type="Sprite2D" parent="." unique_id=859823793]
+
+[node name="MoveTimer" type="Timer" parent="." unique_id=116053593]
+wait_time = 0.09
+autostart = true
+
+[node name="PauseBlinkTimer" type="Timer" parent="." unique_id=1931842777]
+wait_time = 0.2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=508639466]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1009539273]
+offset_left = 179.0
+offset_top = 13.0
+offset_right = 251.0
+offset_bottom = 36.0
+text = "Pontos: 0"
+
+[node name="DifficultyLabel" type="Label" parent="CanvasLayer" unique_id=1890645428]
+offset_left = 287.0
+offset_top = 11.0
+offset_right = 432.0
+offset_bottom = 34.0
+text = "Dificuldade: Médio"
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=357288520]
+offset_left = 468.0
+offset_top = 11.0
+offset_right = 508.0
+offset_bottom = 34.0
+text = "\"\""
+
+[node name="MenuTitleLabel" type="Label" parent="CanvasLayer" unique_id=759887273]
+offset_left = 778.0
+offset_top = 15.0
+offset_right = 818.0
+offset_bottom = 38.0
+
+[node name="MenuInstructionLabel" type="Label" parent="CanvasLayer" unique_id=491950388]
+offset_left = 549.0
+offset_top = 14.0
+offset_right = 589.0
+offset_bottom = 37.0
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
